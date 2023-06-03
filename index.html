@@ -15,6 +15,10 @@
 		xhr.open("GET", "test.json");
 		xhr.send();
 		
-
+                function testFetch(){
+			fetch("test.json").then(response=>response.text()).then(data=>{
+				console.log(JSON.parse(data));
+			})
+		}
 	</script>
 </body>
