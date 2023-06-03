@@ -1,3 +1,20 @@
 <body>
 	<h1>Test</h1>
+
+	<script>
+		function onRSCListener(){
+			console.log(this.readyState);
+			if(this.readyState === XMLHttpRequest.DONE){
+				let data = JSON.parse(this.responseText);
+				console.log(data.miasto + " " + data.temp);
+			}
+		}
+
+		let xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = onRSCListener;
+		xhr.open("GET", "test.json");
+		xhr.send();
+		
+
+	</script>
 </body>
